@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://k23uyh2yjrpk"]
+
+[ext_resource type="Texture2D" uid="uid://crse0nwtypfjv" path="res://Imagens/Fundo/FundoGamePlay.png" id="1_0yxsk"]
+[ext_resource type="Texture2D" uid="uid://bvgjdl3wpfuc2" path="res://Imagens/Fundo/FundoRoxo.png" id="1_7n7bf"]
+[ext_resource type="Texture2D" uid="uid://c13asx6p5qxij" path="res://Imagens/Fundo/MiloTimido.png" id="3_2itnd"]
+[ext_resource type="PackedScene" uid="uid://2ecqes4e6k4b" path="res://Cenas/MiloAnima.tscn" id="4_usmu7"]
+[ext_resource type="PackedScene" uid="uid://cilmg2g1j2ak8" path="res://Cenas/chãote.tscn" id="5_8y1nu"]
+
+[node name="Principal" type="Node2D"]
+
+[node name="Fundo Roxo" type="Sprite2D" parent="."]
+position = Vector2(690.5, 415)
+scale = Vector2(1.81901, 1.96759)
+texture = ExtResource("1_7n7bf")
+
+[node name="Fundo do Jogo" type="Sprite2D" parent="."]
+position = Vector2(693, -861)
+scale = Vector2(0.764792, 0.664625)
+texture = ExtResource("1_0yxsk")
+
+[node name="Milo2DTimido" type="Sprite2D" parent="."]
+position = Vector2(1291, 621)
+scale = Vector2(0.253147, 0.243685)
+texture = ExtResource("3_2itnd")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("5_8y1nu")]
+position = Vector2(180, 638)
+
+[node name="MiloAnima" parent="." instance=ExtResource("4_usmu7")]

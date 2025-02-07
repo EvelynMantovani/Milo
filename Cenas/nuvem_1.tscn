@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpatpm4dfy77o"]
+
+[ext_resource type="Texture2D" uid="uid://bsvxptcbcuyxv" path="res://Imagens/Chão e Nuvem/Nuvem1.png" id="1_hl5op"]
+
+[node name="Nuvem_1" type="Node2D"]
+
+[node name="Nuvem1" type="Sprite2D" parent="."]
+rotation = -3.14159
+texture = ExtResource("1_hl5op")

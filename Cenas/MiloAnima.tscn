@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=3 uid="uid://2ecqes4e6k4b"]
+
+[ext_resource type="Texture2D" uid="uid://beeksr4ohljfc" path="res://Imagens/Milo Dire/MiloPéDire.png" id="1_thhsr"]
+[ext_resource type="Texture2D" uid="uid://dms8umeiulhru" path="res://Imagens/Milo Dire/MiloAndaDire.png" id="2_k1wxa"]
+[ext_resource type="Texture2D" uid="uid://cxrdgwtw21jwr" path="res://Imagens/Milo Esq/MiloPéEsq.png" id="3_814en"]
+[ext_resource type="Texture2D" uid="uid://dbeieogpreia3" path="res://Imagens/Milo Esq/MiloAndaEsq.png" id="4_2gpdh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kovo0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_thhsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_k1wxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_thhsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_thhsr")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_814en")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_814en")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2gpdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_814en")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 7.0
+}]
+
+[sub_resource type="Animation" id="Animation_blqty"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -50), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c6xf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gbacl"]
+_data = {
+"RESET": SubResource("Animation_c6xf4"),
+"new_animation": SubResource("Animation_blqty")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0nvt3"]
+radius = 100.499
+
+[node name="MiloAnima" type="CharacterBody2D"]
+
+[node name="Direita" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kovo0")
+animation = &"new_animation"
+frame_progress = 0.899696
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gbacl")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0nvt3")

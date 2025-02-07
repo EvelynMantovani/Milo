@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d252pahvm4ujc"]
+
+[ext_resource type="PackedScene" uid="uid://cilmg2g1j2ak8" path="res://Cenas/chãote.tscn" id="1_cs6le"]
+[ext_resource type="PackedScene" uid="uid://2ecqes4e6k4b" path="res://Cenas/MiloAnima.tscn" id="2_0r1ek"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_cs6le")]
+position = Vector2(7, 521)
+
+[node name="MiloAnima" parent="." instance=ExtResource("2_0r1ek")]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cetd3sx52qwbk"]
+
+[ext_resource type="Texture2D" uid="uid://duvqq778kad3f" path="res://Imagens/Chão e Nuvem/TerraFlutuante.png" id="1_5h4bo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wb6an"]
+size = Vector2(324, 50)
+
+[node name="Chão" type="Node2D"]
+
+[node name="Terra Flutuante" type="Sprite2D" parent="."]
+texture = ExtResource("1_5h4bo")
+
+[node name="AreaChãoFlutuante" type="Area2D" parent="Terra Flutuante"]
+
+[node name="CollisionChão" type="CollisionShape2D" parent="Terra Flutuante/AreaChãoFlutuante"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_wb6an")

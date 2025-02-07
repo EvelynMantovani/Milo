@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://dowa5cfxf4vx6"]
+
+[ext_resource type="Texture2D" uid="uid://beeksr4ohljfc" path="res://Imagens/Milo Dire/MiloPéDire.png" id="1_rk5eg"]
+[ext_resource type="Texture2D" uid="uid://dms8umeiulhru" path="res://Imagens/Milo Dire/MiloAndaDire.png" id="2_8dl5h"]
+[ext_resource type="Texture2D" uid="uid://cxrdgwtw21jwr" path="res://Imagens/Milo Esq/MiloPéEsq.png" id="3_mw6rs"]
+[ext_resource type="Texture2D" uid="uid://dbeieogpreia3" path="res://Imagens/Milo Esq/MiloAndaEsq.png" id="4_vvkou"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kovo0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rk5eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8dl5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_rk5eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_rk5eg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mw6rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mw6rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vvkou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mw6rs")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 7.0
+}]
+
+[node name="MiloAnima" type="CharacterBody2D"]
+
+[node name="Direita" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kovo0")
+animation = &"new_animation"
+frame_progress = 0.599431
