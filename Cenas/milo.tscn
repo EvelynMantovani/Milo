@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://c33vahisnkgh2"]
+
+[ext_resource type="Texture2D" uid="uid://df6yq65ejwbb" path="res://Imagens/Milo/MiloPéDire.png" id="1_0ui7k"]
+[ext_resource type="Texture2D" uid="uid://duiks2vqilnwe" path="res://Imagens/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_fojmc"]
+[ext_resource type="Script" path="res://Scripts/milo.tres.gd" id="1_vlggw"]
+[ext_resource type="Texture2D" uid="uid://chm7pdknc8hah" path="res://Imagens/Milo/MiloAndaDire.png" id="2_pjoy3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t0gwr"]
+texture = ExtResource("1_fojmc")
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+11:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+11:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+15:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+11:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+11:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+4:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_s53v6"]
+sources/0 = SubResource("TileSetAtlasSource_t0gwr")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_556y2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0ui7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pjoy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_0ui7k")
+}],
+"loop": true,
+"name": &"Milo",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jgj5y"]
+radius = 62.0
+height = 166.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vo1pn"]
+size = Vector2(1384, 20)
+
+[node name="Milo" type="Node2D"]
+
+[node name="Level" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_s53v6")
+format = 2
+
+[node name="Jogador" type="CharacterBody2D" parent="."]
+script = ExtResource("1_vlggw")
+
+[node name="Anima" type="AnimatedSprite2D" parent="Jogador"]
+position = Vector2(372, 212.5)
+scale = Vector2(0.773399, 0.802419)
+sprite_frames = SubResource("SpriteFrames_556y2")
+animation = &"Milo"
+autoplay = "Milo"
+
+[node name="Colizão" type="CollisionShape2D" parent="Jogador"]
+position = Vector2(366, 209)
+shape = SubResource("CapsuleShape2D_jgj5y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(690, 729)
+shape = SubResource("RectangleShape2D_vo1pn")

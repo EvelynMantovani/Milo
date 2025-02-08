@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqmhlf2gka84y"
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://b2hxdpcxa0vle"
+path="res://.godot/imported/5 - Tree_row_BG_2.png-2d693c036221b07ea697e076f5e2d69c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://Imagens/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png"
+dest_files=["res://.godot/imported/5 - Tree_row_BG_2.png-2d693c036221b07ea697e076f5e2d69c.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
