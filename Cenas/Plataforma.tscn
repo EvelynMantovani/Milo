@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpsr3f48vmar4"]
+
+[ext_resource type="Script" path="res://Scripts/plataforma.gd" id="1_b63mh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1my4g"]
+size = Vector2(32, 16)
+
+[node name="Plataforma" type="Node2D"]
+script = ExtResource("1_b63mh")
+
+[node name="Plataforma" type="AnimatableBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma"]
+shape = SubResource("RectangleShape2D_1my4g")
