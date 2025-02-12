@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhhovrdbbgx1b"]
+
+[ext_resource type="Script" path="res://Scripts/trofeu.gd" id="1_4n5gn"]
+[ext_resource type="Texture2D" uid="uid://dxnnwmpch1pc5" path="res://ImagensDaVevy/Chegada.png" id="2_gkipe"]
+[ext_resource type="Texture2D" uid="uid://ddr6mk1fki06g" path="res://ImagensDaVevy/Trofeu2.0.png" id="2_r5xfy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6xx8"]
+radius = 37.3737
+height = 131.091
+
+[node name="Trofeu" type="Node2D"]
+script = ExtResource("1_4n5gn")
+
+[node name="Trofeu2_0" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 3
+position = Vector2(0, -1.52588e-05)
+scale = Vector2(0.435811, 0.3881)
+texture = ExtResource("2_r5xfy")
+
+[node name="Chegada" type="Sprite2D" parent="Trofeu2_0"]
+position = Vector2(-3.63798e-12, 92.7596)
+scale = Vector2(0.276609, 0.22678)
+texture = ExtResource("2_gkipe")
+
+[node name="Areatrofeu" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areatrofeu"]
+scale = Vector2(0.668919, 0.610262)
+shape = SubResource("CapsuleShape2D_l6xx8")
+
+[connection signal="body_entered" from="Areatrofeu" to="." method="parapegarotrofeu"]

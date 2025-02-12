@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://d36pmoc677i03"]
+
+[ext_resource type="Texture2D" uid="uid://cd1xqbo5lmrd3" path="res://ImagensDaVevy/FundoDoFinal.png" id="1_l7fek"]
+[ext_resource type="Script" path="res://Scripts/final.gd" id="1_n7muw"]
+[ext_resource type="Texture2D" uid="uid://fy1vy2njwmfe" path="res://ImagensDaVevy/Kawai.png" id="2_7q7uw"]
+[ext_resource type="Texture2D" uid="uid://dcf6exsq5bxd1" path="res://ImagensDaVevy/Obrigada.png" id="3_g053q"]
+[ext_resource type="FontFile" uid="uid://drjgktd6aqw3m" path="res://Letra/Starborn.ttf" id="4_qifpn"]
+[ext_resource type="Script" path="res://Scripts/volta_tela_inicial.gd" id="6_qtp3a"]
+[ext_resource type="Script" path="res://Scripts/recomeçar.gd" id="7_so177"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8x51h"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n7muw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 998.0
+offset_bottom = 506.0
+color = Color(0.499118, 0.453311, 0.604281, 1)
+
+[node name="FundoDoFinal" type="Sprite2D" parent="ColorRect"]
+position = Vector2(507, 219)
+scale = Vector2(0.875, 0.924383)
+texture = ExtResource("1_l7fek")
+
+[node name="Obrigada" type="Sprite2D" parent="ColorRect"]
+position = Vector2(396, 219)
+scale = Vector2(0.655382, 0.640432)
+texture = ExtResource("3_g053q")
+
+[node name="Kawai" type="Sprite2D" parent="ColorRect"]
+position = Vector2(860, 362)
+scale = Vector2(0.496403, 0.5)
+texture = ExtResource("2_7q7uw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.218
+anchor_top = 0.606
+anchor_right = 0.489
+anchor_bottom = 0.816
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="VoltaTelaInicial" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.773935, 0.684389, 3.85046e-07, 1)
+theme_override_fonts/font = ExtResource("4_qifpn")
+theme_override_font_sizes/font_size = 34
+text = "Quit Game"
+script = ExtResource("6_qtp3a")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8x51h")
+
+[node name="Recomeçar" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("4_qifpn")
+theme_override_font_sizes/font_size = 30
+text = "start over"
+script = ExtResource("7_so177")
+
+[connection signal="pressed" from="VBoxContainer/VoltaTelaInicial" to="." method="_on_volta_tela_inicial_pressed"]
+[connection signal="pressed" from="VBoxContainer/Recomeçar" to="." method="_on_recomeçar_pressed"]
